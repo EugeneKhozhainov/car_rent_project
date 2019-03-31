@@ -17,11 +17,11 @@
 
 <p style="color: red;">${errorString}</p>
 
-<form method="POST" action="${pageContext.request.contextPath}/create">
+<form method="POST" action="${pageContext.request.contextPath}/createCar">
     <table border="0">
         <tr>
             <td>Brand</td>
-            <td><input type="text" name="brand" value="${car.code}" /></td>
+            <td><input type="text" name="brand" value="${car.brand}" /></td>
         </tr>
         <tr>
             <td>Model</td>

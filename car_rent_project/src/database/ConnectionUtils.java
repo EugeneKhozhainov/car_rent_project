@@ -14,7 +14,7 @@ public class ConnectionUtils {
             String userName = "root";
             String password = "root";
 
-            String connectionURL = "jdbc:mysql://" + hostName + ":3306/" + dbName;
+            String connectionURL = "jdbc:mysql://" + hostName + ":3306/" + dbName + "?useSSL=false";
 
             Connection connection = DriverManager.getConnection(connectionURL, userName, password);
             return connection;

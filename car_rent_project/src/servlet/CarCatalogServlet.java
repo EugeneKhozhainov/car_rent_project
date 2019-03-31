@@ -40,6 +40,8 @@ public class CarCatalogServlet extends HttpServlet {
                 entity.setStatus(rs.getString("status"));
                 carList.add(entity);
             }
+            rs.close();
+            statement.close();
 
         } catch (Exception e) {
             e.printStackTrace();
