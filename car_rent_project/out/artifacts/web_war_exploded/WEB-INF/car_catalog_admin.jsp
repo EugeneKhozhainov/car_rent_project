@@ -1,76 +1,43 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: eugenekhozhainov
-  Date: 31/03/2019
-  Time: 07:43
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<!DOCTYPE html>
 <html>
 <head>
-    <title>Title123321123</title>
+    <title>Car catalog</title>
 </head>
 <body>
-<%@page import="java.sql.DriverManager"%>
-<%@page import="java.sql.ResultSet"%>
-<%@page import="java.sql.Statement"%>
-<%@page import="java.sql.Connection"%>
 
-<%
-    String driverName = "com.mysql.jdbc.Driver";
-    String connectionUrl = "jdbc:postgresql://localhost:5432/";
-    String dbName = "postgres";
-    String userId = "postgres";
-    String password = "postgres";
+<h3>Car catalog<</h3>
+<p style="color: red;">${errorString}</p>
 
-    try {
-        Class.forName(driverName);
-    } catch (ClassNotFoundException e) {
-        e.printStackTrace();
-    }
-
-    Connection connection = null;
-    Statement statement = null;
-    ResultSet resultSet = null;
-%>
-<h2><strong>Retrieve data from database in jsp</strong></h2>
-
+<table border="1" cellpadding="5" cellspacing="1" >
     <tr>
-
-
-        <td><b>id</b></td>
-        <td><b>brand</b></td>
-        <td><b>model</b></td>
-        <td><b>price</b></td>
-        <td><b>status</b></td>
+        <th>ID</th>
+        <th>Status</th>
+        <th>Brand</th>
+        <th>Model</th>
+        <th>Price</th>
+        <th>Edit</th>
+        <th>Delete</th>
     </tr>
-    <%
-        try{
-            connection = DriverManager.getConnection(connectionUrl+dbName, userId, password);
-            statement=connection.createStatement();
-            String sql ="SELECT * FROM record";
-
-            resultSet = statement.executeQuery(sql);
-            while(resultSet.next()){
-    %>
-    <tr bgcolor="#DEB887">
-
-        <td><%=resultSet.getString("id") %></td>
-        <td><%=resultSet.getString("brand") %></td>
-        <td><%=resultSet.getString("model") %></td>
-        <td><%=resultSet.getString("price") %></td>
-        <td><%=resultSet.getString("status") %></td>
-
-    </tr>
-
-    <%
-            }
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    %>
+    <c:forEach items="${carList}" var="car" >
+        <tr>
+            <td>${car.id}</td>
+            <td>${car.status}</td>
+            <td>${car.brand}</td>
+            <td>${car.model}</td>
+            <td>${car.price}</td>
+            <td>
+                <a href="editCar?id=${car.id}">Edit</a>
+            </td>
+            <td>
+                <a href="deleteCar?code=${car.id}">Delete</a>
+            </td>
+        </tr>
+    </c:forEach>
 </table>
+<a href="createCar" >Create Car</a>
 
 </body>
 </html>
