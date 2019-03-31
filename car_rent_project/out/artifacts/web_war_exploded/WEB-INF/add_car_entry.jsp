@@ -15,7 +15,7 @@
 
 <h3>Create car entry</h3>
 
-<form method="POST" action="${pageContext.request.contextPath}/carList">
+<form method="POST" action="${pageContext.request.contextPath}/createCar">
     <table border="0">
         <tr>
             <td>Brand</td>

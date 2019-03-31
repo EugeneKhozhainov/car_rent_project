@@ -11,7 +11,9 @@
     <title>Title</title>
 </head>
 <body>
-<form method="POST" action="${pageContext.request.contextPath}/carList">
+<form method="POST" action="${pageContext.request.contextPath}/editCar">
+    <input type="hidden" name="id" value="${car.id}" />
+    <input type="hidden" name="status" value="${car.status}" />
     <table border="0">
         <tr>
             <td>Brand</td>
@@ -19,15 +21,11 @@
         </tr>
         <tr>
             <td>Model</td>
-            <td><input type="text" name="model" value="${car.name}" /></td>
+            <td><input type="text" name="model" value="${car.model}" /></td>
         </tr>
         <tr>
             <td>Price</td>
             <td><input type="text" name="price" value="${car.price}" /></td>
-        </tr>
-        <tr>
-            <td>Id</td>
-            <td><input type="text" name="id" value="${car.id}" /></td>
         </tr>
         <tr>
             <td colspan="2">

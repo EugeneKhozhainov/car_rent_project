@@ -2,6 +2,7 @@ package servlet;
 
 import database.ConnectionUtils;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -17,7 +18,14 @@ public class CarCreateServlet extends HttpServlet {
 
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        RequestDispatcher dispatcher = request.getServletContext()
+                .getRequestDispatcher("/WEB-INF/add_car_entry.jsp");
+        dispatcher.forward(request, response);
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String sql = "Insert into car(brand, model, price, status) values (?,?,?,?)";
         Connection con = ConnectionUtils.getConnection();
         try {
@@ -32,7 +40,7 @@ public class CarCreateServlet extends HttpServlet {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+
         resp.sendRedirect("/carList");
     }
-
 }

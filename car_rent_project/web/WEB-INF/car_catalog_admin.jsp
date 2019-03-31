@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<h3>Car catalog<</h3>
+<h3>Car catalog</h3>
 <p style="color: red;">${error}</p>
 
 <table border="1" cellpadding="5" cellspacing="1" >
