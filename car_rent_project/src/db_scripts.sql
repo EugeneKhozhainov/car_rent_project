@@ -47,7 +47,7 @@ CREATE TABLE orders
   date_to            DATE        NOT NULL,
   user_id            INT         NOT NULL,
   car_id             INT         NOT NULL,
-  admin_id           INT         NOT NULL,
+  admin_id           INT,
   total_amount       DOUBLE         NOT NULL,
   status             VARCHAR(50) NOT NULL,
   reject_reason      VARCHAR(250),
@@ -56,6 +56,8 @@ CREATE TABLE orders
 
 );
 DROP TABLE orders;
+
+alter table orders modify admin_id int null;
 
 INSERT INTO orders (id,
                     created,

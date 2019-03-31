@@ -42,6 +42,8 @@ public class UserMenuServlet extends HttpServlet {
             if (rs.next()) {
                 if (!rs.getString("password").equals(password)) {
                     errors.append("Invalid password<br>");
+                } else {
+                    request.getSession().setAttribute("userId", rs.getLong("id"));
                 }
             } else {
                 errors.append("Invalid user<br>");
