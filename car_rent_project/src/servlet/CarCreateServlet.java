@@ -18,7 +18,8 @@ public class CarCreateServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        getServletContext().getRequestDispatcher("/WEB-INF/edit_car_form.jsp").forward(req, resp);
+        getServletContext().getRequestDispatcher("/WEB-INF/add_car_entry.jsp").forward(req, resp);
+
     }
 
     @Override
