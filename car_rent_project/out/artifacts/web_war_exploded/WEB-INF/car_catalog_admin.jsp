@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Title123321123</title>
 </head>
 <body>
 <%@page import="java.sql.DriverManager"%>
@@ -18,7 +18,7 @@
 
 <%
     String driverName = "com.mysql.jdbc.Driver";
-    String connectionUrl = "jdbc:postgresql://localhost:5432/postgres";
+    String connectionUrl = "jdbc:postgresql://localhost:5432/";
     String dbName = "postgres";
     String userId = "postgres";
     String password = "postgres";
@@ -37,8 +37,7 @@
 
     <tr>
 
-    </tr>
-    <tr bgcolor="#A52A2A">
+
         <td><b>id</b></td>
         <td><b>brand</b></td>
         <td><b>model</b></td>
