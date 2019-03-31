@@ -16,6 +16,10 @@ public class CarEntity {
         this.id = id;
     }
 
+    public String getDescription() {
+        return brand + " " + model + ", price: " + price;
+    }
+
     public String getBrand() {
         return brand;
     }

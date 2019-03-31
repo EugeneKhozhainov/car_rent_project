@@ -5,10 +5,9 @@
     <title></title>
   </head>
   <body>
-  <h1>Car Rental System</h1>
 
-  <a href="userLogin">User Interface</a><br>
-  <a href="admin">Admin Interface</a>
+  <h3>User login error</h3>
+  <p style="color: red;">${error}</p>
 
   </body>
 </html>

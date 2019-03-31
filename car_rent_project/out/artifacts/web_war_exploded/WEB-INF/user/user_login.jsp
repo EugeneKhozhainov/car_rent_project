@@ -5,7 +5,7 @@
     <title>Title</title>
 </head>
 <body>
-<form action="welcome" method="get">
+<form action="userMenu" method="get">
     <h1>Please login(user)</h1>
     <p>Username: <input type="text" name="username"></p>
     <p>Password: <input type="password" name="password"></p>

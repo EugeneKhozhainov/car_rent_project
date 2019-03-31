@@ -11,7 +11,7 @@
     <title>main page</title>
 </head>
 <body>
-<a href="login_user.jsp?value=User">Login user</a>
+<a href="user/user_login.jsp?value=User">Login user</a>
 <a href="login_admin.jsp?value=Admin">Login admin</a>
 </body>
 </html>

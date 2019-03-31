@@ -18,12 +18,6 @@ public class CarCreateServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        getServletContext().getRequestDispatcher("/WEB-INF/add_car_entry.jsp").forward(req, resp);
-
-    }
-
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String sql = "Insert into car(brand, model, price, status) values (?,?,?,?)";
         Connection con = ConnectionUtils.getConnection();
         try {
@@ -38,12 +32,7 @@ public class CarCreateServlet extends HttpServlet {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
         resp.sendRedirect("/carList");
-
-        //String brand = (String)req.getParameter("brand");
-        //String model = (String)req.getParameter("model");
-        //String price = (String)req.getParameter("price");
-
     }
+
 }
