@@ -28,14 +28,6 @@ public class DeleteFromCatalogServlet extends HttpServlet {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        RequestDispatcher dispatcher = req.getServletContext()
-                .getRequestDispatcher("/WEB-INF/delete_car.jsp");
-        dispatcher.forward(req, resp);
-    }
-
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-doGet(req, resp);
-resp.sendRedirect("/carList");
+        resp.sendRedirect("/carList");
     }
 }

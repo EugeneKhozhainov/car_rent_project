@@ -32,7 +32,7 @@
                 <a href="editCar?id=${car.id}">Edit</a>
             </td>
             <td>
-                <a href="deleteCar?code=${car.id}">Delete</a>
+                <a href="deleteCar?id=${car.id}">Delete</a>
             </td>
         </tr>
     </c:forEach>

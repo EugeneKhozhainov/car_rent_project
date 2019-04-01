@@ -8,7 +8,7 @@
   <h1>Car Rental System</h1>
 
   <a href="userLogin">User Interface</a><br>
-  <a href="admin">Admin Interface</a>
+  <a href="adminLogin">Admin Interface</a>
 
   </body>
 </html>
